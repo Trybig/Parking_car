@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'ClientController@allClients')->name('home');
+Route::get('/', 'ClientController@get_all')->name('home');
 
 Route::get('/add', function () {
     return view('add');
@@ -21,9 +21,9 @@ Route::get('/at_parking','ClientController@at_parking')->name('at_parking');
 
 Route::post('/add/submit','ClientController@submit')->name('form-control');
 
-Route::get('/{id}/delete', 'ClientController@delete')->name('delete-client');
+Route::get('/{id}/delete', 'ClientController@delete_client')->name('delete-client');
 
-Route::get('/{id}/update', 'ClientController@update')->name('update-client');
+Route::get('/{id}/update', 'ClientController@update_client')->name('update-client');
 
 Route::post('/{id}/update', 'ClientController@upd_submit')->name('update-submit');
 
